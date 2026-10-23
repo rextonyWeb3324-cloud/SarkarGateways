@@ -1,0 +1,1062 @@
+/* =========================================================
+   SARKAR GETAWAYS — HIDDEN ADMIN & OPERATIONS HQ STYLESHEET
+   Matching Luxury Glassmorphic Aesthetic (Slate-950, Brand Gold & Emerald)
+   ========================================================= */
+
+/* Admin Global Overlays */
+#admin-login-modal,
+#admin-panel-overlay,
+#admin-voucher-modal,
+#admin-itinerary-modal,
+#admin-booking-modal,
+#admin-day-details-modal,
+#admin-help-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+}
+
+#admin-login-modal.active,
+#admin-panel-overlay.active,
+#admin-voucher-modal.active,
+#admin-itinerary-modal.active,
+#admin-booking-modal.active,
+#admin-day-details-modal.active,
+#admin-help-modal.active {
+    display: flex !important;
+}
+
+/* Glassmorphism for Admin */
+.admin-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.admin-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98));
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 158, 11, 0.15);
+}
+
+.admin-panel-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #020617;
+    color: #f1f5f9;
+    overflow: hidden;
+}
+
+/* Top Navigation Bar */
+.admin-topbar {
+    height: 68px;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    flex-shrink: 0;
+    z-index: 50;
+}
+
+.admin-badge-gold {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: fit-content !important;
+    max-height: fit-content !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    align-self: flex-start !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.admin-badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    color: #34d399;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: fit-content !important;
+    max-height: fit-content !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    align-self: flex-start !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* Status Badges */
+.admin-status-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: fit-content !important;
+    max-height: fit-content !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    align-self: flex-start !important;
+    white-space: nowrap !important;
+    padding: 3px 10px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    flex-shrink: 0 !important;
+}
+
+.admin-status-badge.status-confirmed,
+.admin-status-badge.confirmed {
+    background: rgba(16, 185, 129, 0.18) !important;
+    border: 1px solid rgba(52, 211, 153, 0.45) !important;
+    color: #6ee7b7 !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.15) !important;
+}
+
+.admin-status-badge.status-progress,
+.admin-status-badge.in-progress {
+    background: rgba(245, 158, 11, 0.18) !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    color: #fcd34d !important;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.15) !important;
+}
+
+.admin-status-badge.status-pending,
+.admin-status-badge.pending {
+    background: rgba(59, 130, 246, 0.18) !important;
+    border: 1px solid rgba(96, 165, 250, 0.45) !important;
+    color: #93c5fd !important;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Alignment Safety Utilities */
+.items-start { align-items: flex-start !important; }
+.items-center { align-items: center !important; }
+.items-end { align-items: flex-end !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-center { justify-content: center !important; }
+.justify-end { justify-content: flex-end !important; }
+.self-start { align-self: flex-start !important; }
+.self-center { align-self: center !important; }
+.self-end { align-self: flex-end !important; }
+
+/* Main Layout */
+.admin-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar Navigation */
+.admin-sidebar {
+    width: 260px;
+    background: rgba(10, 15, 30, 0.98);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding: 1.25rem 0.85rem;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.875rem;
+    color: #94a3b8;
+    font-size: 0.825rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.admin-nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav-item.active {
+    color: #020617;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+.admin-nav-item.active i {
+    color: #020617;
+}
+
+.admin-nav-badge {
+    margin-left: auto;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 9999px;
+}
+
+/* Admin Content Area */
+.admin-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 2.5rem;
+    background: radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.03), transparent 35%),
+                radial-gradient(circle at 85% 80%, rgba(6, 78, 59, 0.05), transparent 40%),
+                #020617;
+}
+
+/* Admin Sections */
+.admin-tab-content {
+    display: none;
+    animation: adminFadeIn 0.3s ease-out forwards;
+}
+
+.admin-tab-content.active {
+    display: block;
+}
+
+@keyframes adminFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stat Cards */
+.admin-stat-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.admin-stat-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.admin-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+}
+
+/* Glass Tables */
+.admin-table-wrapper {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.815rem;
+    text-align: left;
+}
+
+.admin-table th {
+    background: rgba(2, 6, 23, 0.85);
+    color: #94a3b8;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    padding: 1.1rem 1.35rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-table td {
+    padding: 1.1rem 1.35rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Inputs & Form Controls */
+.admin-input {
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    color: #ffffff;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.admin-input:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+    background: rgba(2, 6, 23, 0.95);
+}
+
+/* =========================================================
+   UNIVERSAL BUTTON RESET & LUXURY GLASSMORPHIC BUTTON SUITE
+   Zero retro borders • Smooth hover animations • Glass aesthetics
+   ========================================================= */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    border: 0;
+    outline: none !important;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    box-sizing: border-box;
+}
+
+/* Glassmorphic Action Buttons */
+.admin-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem;
+    padding: 0.65rem 1.15rem;
+    border-radius: 0.75rem;
+    font-size: 0.825rem;
+    font-weight: 700;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent !important;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    user-select: none;
+}
+
+.admin-btn:active {
+    transform: scale(0.97);
+}
+
+.admin-btn-gold {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #020617 !important;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.admin-btn-gold:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45) !important;
+}
+
+.admin-btn-emerald {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.admin-btn-emerald:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 22px rgba(16, 185, 129, 0.45) !important;
+}
+
+.admin-btn-outline {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    color: #e2e8f0 !important;
+    backdrop-filter: blur(10px);
+}
+
+.admin-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #ffffff !important;
+    transform: translateY(-1.5px);
+}
+
+.admin-btn-danger {
+    background: rgba(239, 68, 68, 0.16) !important;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+    color: #fca5a5 !important;
+}
+
+.admin-btn-danger:hover {
+    background: rgba(239, 68, 68, 0.28) !important;
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    color: #ffffff !important;
+    transform: translateY(-1.5px);
+}
+
+/* Glassmorphic Icon Control Buttons (Top bar, Modals, Tables) */
+.admin-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.75rem;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: #cbd5e1 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    backdrop-filter: blur(8px);
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+.admin-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+.admin-icon-btn.danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: rgba(239, 68, 68, 0.35) !important;
+    color: #f87171 !important;
+}
+
+.admin-icon-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.28) !important;
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    color: #ffffff !important;
+}
+
+/* Sidebar Tool & B2B Quick Buttons */
+.admin-sidebar-tool-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: #cbd5e1 !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    flex: 1;
+    transition: all 0.2s ease !important;
+    outline: none !important;
+    backdrop-filter: blur(8px);
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+.admin-sidebar-tool-btn:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #ffffff !important;
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.admin-quick-b2b-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.55rem 0.65rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 800 !important;
+    font-size: 0.75rem !important;
+    text-decoration: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    transition: all 0.2s ease !important;
+    backdrop-filter: blur(8px);
+}
+
+.admin-quick-b2b-btn:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    filter: brightness(1.15);
+}
+
+/* Modern Calendar Navigation Buttons */
+.admin-cal-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.75rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+.admin-cal-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+/* Calendar Styles */
+.admin-calendar-grid,
+.admin-calendar-weekdays {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+.admin-calendar-day-header {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    padding: 0.65rem 0.25rem;
+    letter-spacing: 0.08em;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(8px);
+}
+
+.admin-calendar-cell {
+    min-height: 118px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.admin-calendar-cell:hover:not(.other-month) {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: rgba(245, 158, 11, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 158, 11, 0.12);
+}
+
+.admin-calendar-cell.other-month {
+    opacity: 0.25;
+    background: rgba(15, 23, 42, 0.25);
+    cursor: default;
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+.admin-calendar-cell.today {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+.admin-calendar-cell.today .day-number {
+    background: #f59e0b;
+    color: #020617;
+    border-radius: 9999px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+/* Event Chips for Calendar */
+.calendar-event-chip,
+.admin-cal-chip {
+    font-size: 0.68rem;
+    padding: 3px 7px;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.2;
+    transition: all 0.15s ease;
+}
+
+.calendar-event-chip:hover,
+.admin-cal-chip:hover {
+    filter: brightness(1.15);
+}
+
+.calendar-event-chip.confirmed,
+.calendar-event-chip.status-confirmed,
+.admin-cal-chip.status-confirmed,
+.admin-cal-chip.confirmed {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(52, 211, 153, 0.45);
+    color: #6ee7b7;
+}
+
+.calendar-event-chip.in-progress,
+.calendar-event-chip.status-progress,
+.admin-cal-chip.status-progress,
+.admin-cal-chip.in-progress {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #fcd34d;
+}
+
+.calendar-event-chip.pending,
+.calendar-event-chip.status-pending,
+.admin-cal-chip.status-pending,
+.admin-cal-chip.pending {
+    background: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(96, 165, 250, 0.45);
+    color: #93c5fd;
+}
+
+.calendar-event-chip.cancelled,
+.admin-cal-chip.cancelled {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    color: #fca5a5;
+}
+
+/* B2B Portal Launcher Cards */
+.b2b-portal-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.b2b-portal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--portal-color, #f59e0b);
+}
+
+.b2b-portal-card:hover {
+    border-color: var(--portal-color, #f59e0b);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================================
+   A4 SIZE LUXURY GLASSMORPHISM VOUCHER & TAX BILL
+   Light Image Background • Blue Letterhead Logo • Exact Print
+   ========================================================= */
+
+.voucher-modal-wrapper {
+    width: 100%;
+    max-height: 94vh;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+/* Exact Standard A4 Proportions */
+.voucher-a4-paper {
+    width: 210mm;
+    max-width: 100%;
+    min-height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 70px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.7);
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(2, 132, 199, 0.06), transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(245, 158, 11, 0.05), transparent 45%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(241, 245, 249, 0.95) 50%, rgba(255, 255, 255, 0.94) 100%),
+        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.25rem 2.5rem;
+    box-sizing: border-box;
+}
+
+/* Frosted Watermark Pattern */
+.voucher-a4-paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(255, 255, 255, 0.4) 100%);
+    pointer-events: none;
+}
+
+/* Glassmorphism Cards inside Voucher */
+.voucher-glass-card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px -4px rgba(30, 58, 138, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.voucher-glass-pill {
+    background: rgba(2, 132, 199, 0.12);
+    border: 1px solid rgba(2, 132, 199, 0.28);
+    color: #0369a1;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 3px 10px;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.voucher-glass-total {
+    background: linear-gradient(135deg, #0a1f44 0%, #1e3a8a 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 28px rgba(10, 31, 68, 0.25);
+    border-radius: 1rem;
+    padding: 1.15rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.voucher-blue-logo {
+    height: 58px;
+    max-width: 220px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.2));
+}
+
+.voucher-tab-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem;
+    padding: 0.55rem 1.25rem !important;
+    border-radius: 0.75rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    border: 1px solid transparent !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    user-select: none;
+}
+
+.voucher-tab-btn.active {
+    background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45) !important;
+}
+
+.voucher-tab-btn:not(.active) {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.voucher-tab-btn:not(.active):hover {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* Print Rules for True A4 Output */
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        width: 210mm !important;
+        height: 297mm !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #admin-voucher-modal,
+    #admin-voucher-modal .voucher-a4-paper,
+    #admin-voucher-modal .voucher-a4-paper * {
+        visibility: visible !important;
+    }
+
+    #admin-voucher-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
+        background: none !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .voucher-modal-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .voucher-a4-paper {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        margin: 0 !important;
+        padding: 16mm 18mm !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .voucher-no-print {
+        display: none !important;
+    }
+}
+
+/* Hidden Trigger Indicator (Subtle in footer) */
+.secret-admin-trigger {
+    opacity: 0.3;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+}
+.secret-admin-trigger:hover {
+    opacity: 1;
+    color: #f59e0b;
+}
+
+/* Modal Inner Container */
+.admin-modal-box {
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 95%;
+    max-width: 740px;
+    margin: auto;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 76px;
+        padding: 1rem 0.5rem;
+    }
+    .admin-nav-item span {
+        display: none;
+    }
+    .admin-nav-item {
+        justify-content: center;
+        padding: 0.85rem;
+    }
+    .admin-nav-badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-calendar-grid {
+        gap: 4px;
+    }
+    .admin-calendar-cell {
+        min-height: 70px;
+        padding: 0.25rem;
+    }
+    .admin-main {
+        padding: 1rem;
+    }
+}
+
+/* =========================================================
+   TRAVELIE LUXURY REDESIGN SUITE (DARK WEBSITE COLOR PALETTE)
+   Obsidian (#020617), Brand Gold (#f59e0b), Emerald (#10b981), Sapphire (#0284c7)
+   ========================================================= */
+
+/* 2-Column Responsive Dashboard Layout */
+.admin-dash-layout {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .admin-dash-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Revenue Chart Container & SVGs */
+#revenue-chart-svg-container svg {
+    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.08));
+}
+
+/* Donut Chart Animation */
+#destinations-donut-container circle {
+    transition: stroke-dasharray 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s ease;
+}
+
+/* Slim Custom Scrollbars for Lists */
+#guides-list-items::-webkit-scrollbar,
+.admin-sidebar::-webkit-scrollbar,
+.admin-main::-webkit-scrollbar,
+.admin-modal-box::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#guides-list-items::-webkit-scrollbar-track,
+.admin-sidebar::-webkit-scrollbar-track,
+.admin-main::-webkit-scrollbar-track,
+.admin-modal-box::-webkit-scrollbar-track {
+    background: rgba(2, 6, 23, 0.5);
+}
+
+#guides-list-items::-webkit-scrollbar-thumb,
+.admin-sidebar::-webkit-scrollbar-thumb,
+.admin-main::-webkit-scrollbar-thumb,
+.admin-modal-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+}
+
+#guides-list-items::-webkit-scrollbar-thumb:hover,
+.admin-sidebar::-webkit-scrollbar-thumb:hover,
+.admin-main::-webkit-scrollbar-thumb:hover,
+.admin-modal-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.4);
+}
+
+/* Quick B2B Button Overrides */
+.admin-quick-b2b-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.65rem;
+    border-radius: 0.65rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.admin-quick-b2b-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.admin-sidebar-tool-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.admin-sidebar-tool-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+

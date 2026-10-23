@@ -18,6 +18,7 @@
 /* Standalone CSS utilities replacing Tailwind CSS. */
 /* UTILITY — GLOBAL RESET AND BASE STYLES */
 *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}body{margin:0;overflow-x:hidden;max-width:100vw}img{max-width:100%;display:block}button,input,select,textarea{font:inherit}button{cursor:pointer;background-color:transparent}a{color:inherit;text-decoration:none}.no-scrollbar::-webkit-scrollbar{display:none}::selection{background:#f59e0b;color:#020617}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}body{margin:0;overflow-x:hidden;max-width:100vw}img{max-width:100%;display:block}button,input,select,textarea{font:inherit}button{cursor:pointer;background-color:transparent;border:none;outline:none;padding:0;margin:0;-webkit-appearance:none;appearance:none}a{color:inherit;text-decoration:none}.no-scrollbar::-webkit-scrollbar{display:none}::selection{background:#f59e0b;color:#020617}
 @keyframes ping{75%,100%{transform:scale(2);opacity:0}}
 
 /* UTILITY — SPACING */

@@ -29,7 +29,27 @@ const slidesData = [
         title: "SUNDARBANS<br>SAFARI",
         desc: "Guided boat safaris through UNESCO heritage mangrove forests, watchtowers, and eco-resort stays with full meals.",
         thumbImg: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
-    }
+    },
+    {
+        subtitle: "Backwaters of Kerala",
+        title: "KERALA<br>WATERWAYS",
+        desc: "Guided boat in backwater allieways , staying the night in the backwaters and expereince tropical delicacies.",
+        thumbImg: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        subtitle: "Beautiful colors along the banks of Ganga river.",
+        title: "VARANASI<br>INDIA",
+        desc: "The scenic aura and the charm of this city have been a motivation ",
+        thumbImg: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        subtitle: "The Jewel of Northeast India.",
+        title: "MANIPUR<br>Simply Beautiful.",
+        desc: "Best if your site focuses on the state's vibrant festivals (like the Sangai Festival), local handlooms, classical dance, and historic sites like Kangla Fort.",
+        thumbImg: "https://images.unsplash.com/photo-1620766165457-a8025baa82e0?auto=format&fit=crop&w=500&q=80"
+    },
+
+    
 ];
 
 // ==================================================
@@ -586,13 +606,31 @@ function handleInquiry(event) {
     event.preventDefault();
 
     const nameEl = document.getElementById('client-name');
+    const phoneEl = document.getElementById('client-phone');
     const destinationEl = document.getElementById('client-destination');
+    const cabEl = document.getElementById('client-cab');
+    const msgEl = document.getElementById('client-msg');
     const inquiryForm = document.getElementById('inquiry-form');
 
     if (!nameEl || !destinationEl || !inquiryForm) return;
 
     const name = nameEl.value.trim();
+    const phone = phoneEl ? phoneEl.value.trim() : '';
     const destination = destinationEl.value;
+    const cabPreference = cabEl ? cabEl.value : 'Private Cab';
+    const datesNotes = msgEl ? msgEl.value.trim() : '';
+
+    // If adminStore exists, seamlessly save inquiry to admin dashboard
+    if (window.adminStore && typeof window.adminStore.addEnquiry === 'function') {
+        window.adminStore.addEnquiry({
+            name: name,
+            phone: phone,
+            destination: destination,
+            cabPreference: cabPreference,
+            datesNotes: datesNotes,
+            status: "New"
+        });
+    }
 
     showToast(
         `Thank you ${name}! Your quote request for ${destination} has been received.`
