@@ -265,7 +265,6 @@ let pkgResumeTimer = null;
 let pkgOriginalCount = 0;
 let pkgLoopWidth = 0;
 let pkgIsResetting = false;
-let pkgIsHovering = false;
 let pkgIsFocused = false;
 
 function setPkgBg(index) {
@@ -334,6 +333,24 @@ function updatePkgLoopWidth() {
     pkgLoopWidth = getPkgStep() * pkgOriginalCount;
 }
 
+// Rebuild the infinite carousel after the admin package manager publishes catalogue changes.
+function refreshPkgCarousel() {
+    if (!pkgTrack) return;
+    clearInterval(pkgAutoTimer);
+    clearTimeout(pkgResumeTimer);
+    pkgOriginalCount = 0;
+    pkgLoopWidth = 0;
+    pkgIsResetting = false;
+    pkgTrack.dataset.loopReady = 'false';
+    pkgTrack.scrollLeft = 0;
+    setupPkgLoop();
+    requestAnimationFrame(() => {
+        updatePkgLoopWidth();
+        startPkgAutoRotation();
+    });
+}
+window.refreshPkgCarousel = refreshPkgCarousel;
+
 // Move the package carousel using the previous/next buttons.
 function scrollPkgCarousel(direction) {
     if (!pkgTrack) return;
@@ -377,30 +394,29 @@ function handlePkgLoop() {
     }
 }
 
-// Start automatic rotation.
+// Start automatic rotation. The wrap is performed between animation steps,
+ // never from the scroll event, so smooth scrolling is not interrupted.
 function startPkgAutoRotation() {
     clearInterval(pkgAutoTimer);
-
     if (!pkgTrack) return;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-    }
-
     pkgAutoTimer = setInterval(() => {
-        if (document.hidden || pkgIsHovering || pkgIsFocused) {
-            return;
-        }
+        if (document.hidden || pkgIsFocused) return;
 
         const step = getPkgStep();
+        if (!step) return;
 
-        if (step) {
-            pkgTrack.scrollBy({
-                left: step,
-                behavior: 'smooth'
-            });
+        // When the original catalogue has passed, jump back by exactly one
+        // catalogue width into the identical cloned cards, then keep moving.
+        if (pkgLoopWidth > 0 && pkgTrack.scrollLeft >= pkgLoopWidth - 2) {
+            pkgTrack.scrollLeft = Math.max(0, pkgTrack.scrollLeft - pkgLoopWidth);
         }
-    }, 4500);
+
+        pkgTrack.scrollTo({
+            left: pkgTrack.scrollLeft + step,
+            behavior: 'smooth'
+        });
+    }, 4200);
 }
 
 // Resume automatic rotation after manual navigation.
@@ -417,19 +433,8 @@ function schedulePkgResume() {
 if (pkgTrack) {
     setupPkgLoop();
 
-    pkgTrack.addEventListener('scroll', handlePkgLoop, {
-        passive: true
-    });
-
-    pkgTrack.addEventListener('mouseenter', () => {
-        pkgIsHovering = true;
-        clearInterval(pkgAutoTimer);
-    });
-
-    pkgTrack.addEventListener('mouseleave', () => {
-        pkgIsHovering = false;
-        startPkgAutoRotation();
-    });
+    // Autoplay intentionally continues while the pointer is over the carousel.
+    // This prevents the slider appearing broken when a user hovers to read a tile.
 
     pkgTrack.addEventListener('focusin', () => {
         pkgIsFocused = true;
@@ -440,7 +445,7 @@ if (pkgTrack) {
         requestAnimationFrame(() => {
             pkgIsFocused = pkgTrack.contains(document.activeElement);
 
-            if (!pkgIsFocused && !pkgIsHovering) {
+            if (!pkgIsFocused) {
                 startPkgAutoRotation();
             }
         });
@@ -551,6 +556,13 @@ function selectPackage(pkgName) {
     const contactSection = document.getElementById('contact');
 
     if (selectEl) {
+        const optionExists = Array.from(selectEl.options).some((option) => option.value === pkgName || option.textContent === pkgName);
+        if (!optionExists) {
+            const option = document.createElement('option');
+            option.value = pkgName;
+            option.textContent = pkgName;
+            selectEl.appendChild(option);
+        }
         selectEl.value = pkgName;
     }
 
@@ -604,39 +616,21 @@ function showToast(message) {
 
 function handleInquiry(event) {
     event.preventDefault();
-
-    const nameEl = document.getElementById('client-name');
-    const phoneEl = document.getElementById('client-phone');
-    const destinationEl = document.getElementById('client-destination');
-    const cabEl = document.getElementById('client-cab');
-    const msgEl = document.getElementById('client-msg');
-    const inquiryForm = document.getElementById('inquiry-form');
-
-    if (!nameEl || !destinationEl || !inquiryForm) return;
-
-    const name = nameEl.value.trim();
-    const phone = phoneEl ? phoneEl.value.trim() : '';
-    const destination = destinationEl.value;
-    const cabPreference = cabEl ? cabEl.value : 'Private Cab';
-    const datesNotes = msgEl ? msgEl.value.trim() : '';
-
-    // If adminStore exists, seamlessly save inquiry to admin dashboard
-    if (window.adminStore && typeof window.adminStore.addEnquiry === 'function') {
-        window.adminStore.addEnquiry({
-            name: name,
-            phone: phone,
-            destination: destination,
-            cabPreference: cabPreference,
-            datesNotes: datesNotes,
-            status: "New"
-        });
+    const name = document.getElementById('client-name')?.value.trim() || '';
+    const phone = document.getElementById('client-phone')?.value.trim() || '';
+    const destination = document.getElementById('client-destination')?.value || '';
+    const cabPreference = document.getElementById('client-cab')?.value || 'Private Cab';
+    const datesNotes = document.getElementById('client-msg')?.value.trim() || '';
+    if (!name || !phone || !destination) {
+        showToast('Please complete your name, phone number and destination.');
+        return;
     }
-
-    showToast(
-        `Thank you ${name}! Your quote request for ${destination} has been received.`
+    const subject = encodeURIComponent(`Travel enquiry – ${destination}`);
+    const body = encodeURIComponent(
+        `Hello SarkarGateways,\n\nI would like to enquire about a trip.\n\nName: ${name}\nPhone: ${phone}\nDestination: ${destination}\nCab preference: ${cabPreference}\nTravel details: ${datesNotes}\n\nPlease contact me with the next steps.`
     );
-
-    inquiryForm.reset();
+    showToast('Opening your email app with the enquiry details. This preview does not store bookings.');
+    window.location.href = `mailto:sarkar.getaways@gmail.com?subject=${subject}&body=${body}`;
 }
 
 // ==================================================
@@ -681,3 +675,36 @@ function closeMobileMenu() {
         icon.classList.add('fa-bars');
     }
 }
+
+
+// =========================================================
+// V5: SCROLL-AWARE ICON NAVIGATION + COMPANY DATA SYNC
+// =========================================================
+(function initScrollIconNavigation() {
+    const nav = document.getElementById('scroll-icon-nav');
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll('a[data-section]'));
+    const sections = links.map(link => document.getElementById(link.dataset.section)).filter(Boolean);
+    const syncVisibility = () => {
+        const visible = window.scrollY > 180;
+        nav.classList.toggle('is-visible', visible);
+        nav.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        nav.querySelectorAll('a').forEach(link => { link.tabIndex = visible ? 0 : -1; });
+    };
+    links.forEach(link => link.addEventListener('click', () => {
+        if (typeof closeMobileMenu === 'function') closeMobileMenu();
+    }));
+    window.addEventListener('scroll', syncVisibility, { passive: true });
+    window.addEventListener('resize', syncVisibility, { passive: true });
+    syncVisibility();
+
+    if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(entries => {
+            const candidates = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio);
+            if (!candidates.length) return;
+            const sectionId = candidates[0].target.id;
+            links.forEach(link => link.classList.toggle('is-active', link.dataset.section === sectionId));
+        }, { rootMargin: '-24% 0px -55% 0px', threshold: [0, .1, .25, .5] });
+        sections.forEach(section => observer.observe(section));
+    }
+})();

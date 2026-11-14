@@ -1,0 +1,8 @@
+PHOTO SOURCE & USAGE NOTES — CLIENT PREVIEW EDITION V1.1
+
+Destination images are loaded from images.unsplash.com using the Unsplash photo CDN. These are illustrative destination images, not SarkarGateways-owned photographs or verified customer trip photos.
+
+Unsplash License: https://unsplash.com/license
+Photo discovery: https://unsplash.com/s/photos/indian-tourism and https://unsplash.com/s/photos/india-travel
+
+Unsplash images are generally made available under the Unsplash License, subject to its terms and restrictions. They are not public-domain images. Review the current license and individual asset suitability before production use. Image source IDs and destinations are listed in sg-demo-content.js.

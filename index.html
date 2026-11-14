@@ -4,15 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarkar Getaways | Custom Travel Agency</title>
+    <title>SarkarGateways | Travel Partner Preview</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css?v=beta-v1-8-review-layout"><style>
+.sg-preview-ribbon{position:relative;z-index:60;display:flex;justify-content:center;align-items:center;gap:10px;padding:8px 14px;background:#f4b544;color:#10213b;font-size:11px;letter-spacing:.04em;text-align:center}
+.sg-preview-ribbon strong{font-weight:900;letter-spacing:.12em}
+.sg-preview-ribbon span{font-weight:600}
+@media(max-width:600px){.sg-preview-ribbon{font-size:9px;gap:6px;flex-wrap:wrap;padding:7px 10px}}
+</style>
+
+<style id="sg-preview-polish-v1-1">
+/* Seamless, continuously moving gallery and feedback rows */
+#sg-gallery .sg-marquee,#sg-feedback .sg-marquee{overflow:hidden!important;position:relative!important;mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)!important}
+#sg-gallery .sg-marquee-track,#sg-feedback .sg-marquee-track{display:flex!important;flex-wrap:nowrap!important;width:max-content!important;min-width:max-content!important;max-width:none!important;gap:16px!important;transform:translate3d(0,0,0);animation-duration:var(--sg-loop-duration,58s)!important;animation-timing-function:linear!important;animation-iteration-count:infinite!important;will-change:transform!important}
+#sg-gallery .sg-marquee-track[data-direction="left"],#sg-feedback .sg-marquee-track[data-direction="left"]{animation-name:sgPreviewLoopLeft!important}
+#sg-gallery .sg-marquee-track[data-direction="right"],#sg-feedback .sg-marquee-track[data-direction="right"]{animation-name:sgPreviewLoopRight!important}
+@keyframes sgPreviewLoopLeft{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@keyframes sgPreviewLoopRight{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+#sg-gallery .sg-photo-tile,#sg-feedback .sg-review-tile{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease!important}
+#sg-gallery .sg-photo-tile:hover,#sg-feedback .sg-review-tile:hover{transform:translateY(-5px) scale(1.025)!important;border-color:rgba(244,181,68,.8)!important;box-shadow:0 16px 36px rgba(0,0,0,.38)!important}
+#sg-gallery .sg-photo-tile{position:relative!important}
+#sg-gallery .sg-photo-tile figcaption{position:absolute!important;inset:auto 0 0!important;padding:26px 13px 12px!important;background:linear-gradient(transparent,rgba(2,8,23,.92))!important;display:grid!important;gap:3px!important}
+#sg-gallery .sg-photo-tile figcaption b{font-size:13px!important;color:#fff!important}
+#sg-gallery .sg-photo-tile figcaption span{font-size:10px!important;color:#dbe4f0!important}
+.sg-demo-label{display:block!important;color:#f4c66c!important;font-size:8px!important;line-height:1.35!important;font-weight:800!important;letter-spacing:.055em!important;margin-top:5px!important}
+.sg-preview-float{position:fixed;left:0;top:46%;z-index:1000;display:flex;align-items:center;gap:9px;padding:10px 13px 10px 10px;border:1px solid rgba(244,181,68,.55);border-left:0;border-radius:0 14px 14px 0;background:rgba(7,19,38,.94);color:#f8fafc;box-shadow:0 8px 26px rgba(0,0,0,.3);backdrop-filter:blur(12px);cursor:default;transition:opacity .25s ease,transform .25s ease;max-width:190px}
+.sg-preview-float-icon{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:rgba(244,181,68,.16);color:#f4b544;flex:0 0 28px}
+.sg-preview-float-text{display:grid;text-align:left;gap:2px;white-space:nowrap}.sg-preview-float-text b{font-size:10px;letter-spacing:.07em;text-transform:uppercase}.sg-preview-float-text small{font-size:9px;color:#cbd5e1}
+.sg-preview-float:hover{transform:translateX(3px);background:rgba(12,32,59,.98)}.sg-preview-float.is-hidden{opacity:0;pointer-events:none;transform:translateX(-110%)}
+.sg-preview-footer-note{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:13px 18px;background:#071326;border-top:1px solid rgba(244,181,68,.25);color:#aebed2;text-align:center;font-size:10px;letter-spacing:.025em}
+.sg-preview-footer-note strong{color:#f4b544;font-size:10px;letter-spacing:.12em}.sg-preview-status-dot{width:7px;height:7px;border-radius:50%;background:#f4b544;box-shadow:0 0 0 4px rgba(244,181,68,.12)}
+@media(max-width:640px){.sg-preview-float{top:42%;padding:8px 9px 8px 8px;gap:7px}.sg-preview-float-icon{width:25px;height:25px;flex-basis:25px}.sg-preview-float-text b{font-size:9px}.sg-preview-float-text small{font-size:8px}.sg-preview-footer-note{font-size:9px;padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){#sg-gallery .sg-marquee-track,#sg-feedback .sg-marquee-track{animation:none!important}.sg-preview-float{transition:none}}
+</style>
 
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-slate-950">
+
+    
 
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-brand-emerald border border-emerald-400 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3">
         <i class="fa-solid fa-circle-check text-brand-gold text-xl"></i>
@@ -31,6 +62,7 @@
                 <a href="#destinations" class="hover:text-brand-gold transition-colors">Destinations</a>
                 <a href="#steps" class="hover:text-brand-gold transition-colors">How It Works</a>
                 <a href="#contact" class="hover:text-brand-gold transition-colors">Contacts</a>
+                <a href="gallery.html" class="hover:text-brand-gold transition-colors">Gallery</a>
             </nav>
 
             <div class="flex items-center space-x-2 sm:space-x-4">
@@ -82,6 +114,13 @@
                     </span>
                     <i class="fa-solid fa-chevron-right text-[10px] text-white/30"></i>
                 </a>
+                <a href="gallery.html" onclick="closeMobileMenu()" class="mobile-nav-link">
+                    <span class="flex items-center space-x-3">
+                        <i class="fa-regular fa-images text-brand-gold text-xs"></i>
+                        <span>Gallery</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-[10px] text-white/30"></i>
+                </a>
 
                 <div class="pt-2">
                     <a href="#contact" onclick="closeMobileMenu()" class="glass-btn-gold w-full py-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center space-x-2">
@@ -92,6 +131,16 @@
             </nav>
         </div>
     </header>
+
+    <!-- Compact icon navigation appears once the main page starts scrolling. -->
+    <nav id="scroll-icon-nav" class="scroll-icon-nav" aria-label="Quick page navigation" aria-hidden="true">
+        <a href="#home" data-section="home" aria-label="Home" title="Home"><i class="fa-solid fa-house"></i><span class="scroll-nav-tooltip">Home</span></a>
+        <a href="#packages" data-section="packages" aria-label="Holidays" title="Holidays"><i class="fa-solid fa-suitcase-rolling"></i><span class="scroll-nav-tooltip">Holidays</span></a>
+        <a href="#destinations" data-section="destinations" aria-label="Destinations" title="Destinations"><i class="fa-solid fa-map-location-dot"></i><span class="scroll-nav-tooltip">Destinations</span></a>
+        <a href="#steps" data-section="steps" aria-label="How It Works" title="How It Works"><i class="fa-solid fa-list-check"></i><span class="scroll-nav-tooltip">How It Works</span></a>
+        <a href="#contact" data-section="contact" aria-label="Contacts" title="Contacts"><i class="fa-solid fa-phone"></i><span class="scroll-nav-tooltip">Contacts</span></a>
+        <a href="gallery.html" aria-label="Gallery" title="Gallery"><i class="fa-regular fa-images"></i><span class="scroll-nav-tooltip">Gallery</span></a>
+    </nav>
 
     <section id="home" class="hero-cinematic">
         <div class="absolute top-0 left-0 right-0 h-1 bg-white/10 z-50">
@@ -126,7 +175,7 @@
                     </h1>
 
                     <p id="hero-desc" class="text-slate-300 text-xs sm:text-base max-w-md leading-relaxed font-normal">
-                        Misty tea gardens, breathtaking Himalayan sunrise views at Tiger Hill, and verified hotel + private cab packages curated by Sarkar Getaways.
+                        Misty tea gardens, Himalayan sunrise views at Tiger Hill, and tailored hotel and private-transfer options subject to availability.
                     </p>
 
                     <div class="pt-2 sm:pt-3 flex items-center space-x-3 sm:space-x-4">
@@ -181,14 +230,14 @@
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/65 to-slate-950/95 pointer-events-none"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div id="destinations" class="flex flex-col md:flex-row md:items-end justify-between gap-6 scroll-mt-24">
                 <div class="space-y-3">
                     <span class="text-brand-gold font-bold uppercase tracking-widest text-xs flex items-center gap-2">
                         <i class="fa-solid fa-sparkles"></i> Curated Itineraries
                     </span>
                     <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Popular Tour Packages</h2>
                     <p class="text-slate-300 text-sm sm:text-base max-w-xl">
-                        Browse our expanded collection of handcrafted getaways with B2B verified hotels, exclusive private cabs with en-route sightseeing, and zero hidden costs.
+                        Explore holiday ideas, then share your dates and preferences. We confirm supplier availability, inclusions, and the final quote before a booking is accepted.
                     </p>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -213,10 +262,10 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>West Bengal</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>4.9 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Darjeeling Hills & Tea Estates</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">B2B verified hotel stay, Tiger Hill sunrise excursion, and exclusive private cab from NJP/Bagdogra.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">Hotel options, Tiger Hill sunrise planning, and private transfers from NJP or Bagdogra, subject to supplier availability.</p>
                         </div>
                     </div>
                     <div class="p-7 pt-4 border-t border-white/10 flex items-center justify-between">
@@ -239,10 +288,10 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>Sikkim</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>5.0 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Gangtok & En-Route Sightseeing</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">NJP pickup with custom en-route Teesta river stops, Tsomgo Lake tour, and official hotel vouchers.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">NJP pickup options, Teesta river stops, Tsomgo Lake planning and accommodation arrangements to be confirmed.</p>
                         </div>
                     </div>
                     <div class="p-7 pt-4 border-t border-white/10 flex items-center justify-between">
@@ -265,10 +314,10 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>Bengal Coast</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>4.8 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Mandarmani Beach Getaway</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">Verified beachfront resort stay, private cab pickup, and relaxing coastal weekend itinerary.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed">Beachfront accommodation options, private pickup planning and a relaxed coastal weekend itinerary.</p>
                         </div>
                     </div>
                     <div class="p-7 pt-4 border-t border-white/10 flex items-center justify-between">
@@ -291,7 +340,7 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>Odisha Coast</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>4.9 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Puri Sea Retreat & Temple Darshan</h3>
                             <p class="text-slate-300 text-sm leading-relaxed">Jagannath temple assistance, golden beach hotel stay, and Konark Sun Temple sightseeing tour.</p>
@@ -317,7 +366,7 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>Delta Safari</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>4.9 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Sundarbans Mangrove Safari</h3>
                             <p class="text-slate-300 text-sm leading-relaxed">Guided boat cruise through UNESCO mangrove rivers, watchtower wildlife spotting, and eco-resort meals.</p>
@@ -343,7 +392,7 @@
                         <div class="p-7 space-y-3">
                             <div class="flex items-center justify-between text-xs text-slate-300">
                                 <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>North East</span>
-                                <span><i class="fa-solid fa-star text-brand-gold mr-1"></i>5.0 (Verified)</span>
+                                <span><i class="fa-solid fa-sparkles text-brand-gold mr-1"></i>Curated itinerary</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white">Shillong & Cherrapunji Waterfalls</h3>
                             <p class="text-slate-300 text-sm leading-relaxed">Living root bridges, crystal clear Umngot river boating at Dawki, and comfortable SUV transfers.</p>
@@ -363,57 +412,134 @@
         </div>
     </section>
 
-    <section id="steps" class="relative py-16 sm:py-28 bg-slate-950 text-white border-t border-white/10 overflow-hidden">
+    <!-- WHY CHOOSE US — original SarkarGateways navy / gold theme -->
+    <section id="why-choose-us" class="why-choose-section relative overflow-hidden">
+        <div class="why-choose-glow why-choose-glow-one" aria-hidden="true"></div>
+        <div class="why-choose-glow why-choose-glow-two" aria-hidden="true"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="why-choose-layout">
+                <div class="why-choose-intro">
+                    <span class="why-choose-eyebrow"><i class="fa-solid fa-compass"></i> WHY CHOOSE SARKARGATEWAYS</span>
+                    <h2>Travel your way.<br><span>We’ll handle the details.</span></h2>
+                    <p>Every journey should feel personal. We help you plan memorable trips with thoughtful itineraries, clear communication, and the freedom to make each experience your own.</p>
+                    <a href="#packages" class="why-choose-cta">Explore Packages <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                    <div class="why-choose-photo-wrap">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Dramatic mountain landscape for an unforgettable journey" loading="lazy">
+                        <div class="why-choose-photo-caption"><i class="fa-solid fa-location-dot"></i><span>Find your next somewhere</span></div>
+                    </div>
+                </div>
+                <div class="why-choose-benefits" aria-label="Why travel with SarkarGateways">
+                    <article class="why-benefit-card">
+                        <div class="why-benefit-top"><span class="why-benefit-number">01</span><span class="why-benefit-icon"><i class="fa-solid fa-route"></i></span></div>
+                        <h3>Personal, not packaged</h3>
+                        <p>Your journey should fit your travel style. Share your interests, pace, and budget, and we’ll help shape a trip around you.</p>
+                        <span class="why-benefit-line"></span>
+                    </article>
+                    <article class="why-benefit-card">
+                        <div class="why-benefit-top"><span class="why-benefit-number">02</span><span class="why-benefit-icon"><i class="fa-solid fa-list-check"></i></span></div>
+                        <h3>Thoughtfully planned details</h3>
+                        <p>From stays and transfers to activities and timing, we help bring the moving parts together before your trip begins.</p>
+                        <span class="why-benefit-line"></span>
+                    </article>
+                    <article class="why-benefit-card">
+                        <div class="why-benefit-top"><span class="why-benefit-number">03</span><span class="why-benefit-icon"><i class="fa-solid fa-mountain-sun"></i></span></div>
+                        <h3>Memorable places and experiences</h3>
+                        <p>Discover destinations across India through carefully considered itineraries, local highlights, and experiences worth remembering.</p>
+                        <span class="why-benefit-line"></span>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B NETWORK — compact trust and supplier-platform context -->
+    <section id="b2b-network" class="sg-b2b-trust" aria-labelledby="sg-b2b-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="sg-b2b-trust-inner">
+                <div class="sg-b2b-trust-copy">
+                    <span class="sg-b2b-eyebrow"><i class="fa-solid fa-handshake-angle"></i> OUR B2B NETWORK</span>
+                    <h2 id="sg-b2b-title">Better journeys, backed by a connected travel network.</h2>
+                    <p>We use established travel partner platforms to source and coordinate travel options. Every quote is checked for availability, inclusions and final terms before confirmation.</p>
+                </div>
+                <div class="sg-b2b-trust-points">
+                    <span><i class="fa-solid fa-shield-halved"></i> Supplier-led availability checks</span>
+                    <span><i class="fa-solid fa-clipboard-check"></i> Clear quote and booking terms</span>
+                    <span><i class="fa-solid fa-headset"></i> Support from our planning team</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="sg-booking-steps-section relative py-16 sm:py-24 bg-slate-950 text-white border-t border-white/10 overflow-hidden">
         <div id="steps-bg-container" class="absolute inset-0 pointer-events-none">
             <div class="steps-bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=85');"></div>
             <div class="steps-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=85');"></div>
             <div class="steps-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=85');"></div>
+            <div class="steps-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1920&q=85');"></div>
+            <div class="steps-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1920&q=85');"></div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/70 to-slate-950/90 pointer-events-none"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto space-y-4 mb-10 sm:mb-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-10 sm:mb-14">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-brand-gold font-bold uppercase tracking-widest text-xs">
-                    <i class="fa-solid fa-shield-halved"></i> 100% Anti-Scam Verified Bookings
+                    <i class="fa-solid fa-route"></i> Simple, transparent booking journey
                 </span>
-                <h2 class="text-3xl sm:text-5xl font-black tracking-tight drop-shadow-lg">3 Easy Steps For Booking</h2>
-                <p class="text-slate-200 text-sm sm:text-base">Every hotel and cab is booked through official B2B portals (TripJack & Riya Connect) with guaranteed corporate vouchers.</p>
-                <div class="flex items-center justify-center space-x-2 pt-2">
-                    <button onclick="setStepsBg(0)" class="steps-dot w-8 h-1.5 rounded-full bg-brand-gold transition-all"></button>
-                    <button onclick="setStepsBg(1)" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
-                    <button onclick="setStepsBg(2)" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight drop-shadow-lg">5 Easy Steps to Book Your Trip</h2>
+                <p class="text-slate-200 text-sm sm:text-base">Share your plans, review the quote and terms, confirm only after availability is checked, then travel with your booking details and support contact.</p>
+                <div class="flex items-center justify-center space-x-2 pt-2" role="group" aria-label="Booking step background preview">
+                    <button onclick="setStepsBg(0)" aria-label="Step 1 background" class="steps-dot w-8 h-1.5 rounded-full bg-brand-gold transition-all"></button>
+                    <button onclick="setStepsBg(1)" aria-label="Step 2 background" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                    <button onclick="setStepsBg(2)" aria-label="Step 3 background" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                    <button onclick="setStepsBg(3)" aria-label="Step 4 background" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                    <button onclick="setStepsBg(4)" aria-label="Step 5 background" class="steps-dot w-3 h-1.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <div onmouseenter="setStepsBg(0)" class="glass-tile p-6 sm:p-8 rounded-3xl space-y-5 hover:border-brand-gold/60 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="flex items-center justify-between">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-emerald/90 border border-emerald-400/30 text-brand-gold flex items-center justify-center text-2xl font-black shadow-lg">01</div>
-                        <i class="fa-solid fa-map-location-dot text-2xl text-white/30 group-hover:text-brand-gold transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">Customize Your Plan</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">Tell us your travel dates, budget, and any en-route sightseeing stops (like Teesta viewpoints or Sevoke) you want along the way.</p>
-                </div>
-
-                <div onmouseenter="setStepsBg(1)" class="glass-tile p-6 sm:p-8 rounded-3xl space-y-5 hover:border-brand-gold/60 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="flex items-center justify-between">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-ochre/90 border border-amber-300/30 text-white flex items-center justify-center text-2xl font-black shadow-lg">02</div>
-                        <i class="fa-solid fa-file-shield text-2xl text-white/30 group-hover:text-brand-gold transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">Get Official B2B Vouchers</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">Pay a secure advance to lock in your verified hotel room and exclusive private vehicle with pre-verified driver details.</p>
-                </div>
-
-                <div onmouseenter="setStepsBg(2)" class="glass-tile p-6 sm:p-8 rounded-3xl space-y-5 hover:border-brand-gold/60 hover:-translate-y-2 transition-all duration-300 group">
-                    <div class="flex items-center justify-between">
-                        <div class="w-14 h-14 rounded-2xl bg-teal-600/90 border border-teal-300/30 text-white flex items-center justify-center text-2xl font-black shadow-lg">03</div>
-                        <i class="fa-solid fa-headset text-2xl text-white/30 group-hover:text-brand-gold transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">Travel With 24/7 Support</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">Enjoy your holiday with pre-checked hotel check-ins and personal WhatsApp support throughout the entire journey.</p>
-                </div>
+            <div class="booking-steps-grid">
+                <article onmouseenter="setStepsBg(0)" class="glass-tile booking-step-card rounded-3xl group">
+                    <div class="booking-step-top"><span class="booking-step-number">01</span><i class="fa-solid fa-compass"></i></div>
+                    <h3>Choose Your Holiday</h3>
+                    <p>Explore our holiday ideas or tell us where you want to go, your budget and travel style.</p>
+                </article>
+                <article onmouseenter="setStepsBg(1)" class="glass-tile booking-step-card rounded-3xl group">
+                    <div class="booking-step-top"><span class="booking-step-number">02</span><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>Share Trip Details</h3>
+                    <p>Send your dates, pickup point, traveller count and preferences using the enquiry form.</p>
+                </article>
+                <article onmouseenter="setStepsBg(2)" class="glass-tile booking-step-card rounded-3xl group">
+                    <div class="booking-step-top"><span class="booking-step-number">03</span><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3>Review Your Quote</h3>
+                    <p>We check supplier availability and send the itinerary, inclusions, final price and terms.</p>
+                </article>
+                <article onmouseenter="setStepsBg(3)" class="glass-tile booking-step-card rounded-3xl group">
+                    <div class="booking-step-top"><span class="booking-step-number">04</span><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>Confirm the Booking</h3>
+                    <p>Approve the details, pay only through the agreed channel, and receive confirmation documents.</p>
+                </article>
+                <article onmouseenter="setStepsBg(4)" class="glass-tile booking-step-card rounded-3xl group">
+                    <div class="booking-step-top"><span class="booking-step-number">05</span><i class="fa-solid fa-person-walking-luggage"></i></div>
+                    <h3>Enjoy Your Journey</h3>
+                    <p>Keep your itinerary and support contact handy, then enjoy your trip with help when needed.</p>
+                </article>
             </div>
+            <div class="text-center mt-9 sm:mt-11"><button onclick="scrollToBooking()" class="glass-btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm"><i class="fa-solid fa-paper-plane"></i> Start Planning My Trip</button></div>
         </div>
+    </section>
+
+
+
+    <section id="sg-gallery" class="sg-gallery-photo-section">
+      <div class="sg-photo-bg"></div>
+      <div class="sg-photo-overlay"></div>
+      <div class="sg-photo-content">
+        <div class="sg-section-heading"><span>TRAVEL MOMENTS</span><h2>Stories From The Road</h2><p>Discover beautiful places and unforgettable moments from our journeys.</p></div>
+        <div class="sg-marquee sg-gallery-marquee">
+          <div class="sg-marquee-track sg-gallery-row" data-direction="right" id="sg-public-gallery-row1"><div class="sg-gallery-placeholder">Our travel gallery is being curated.</div></div>
+          <div class="sg-marquee-track sg-gallery-row" data-direction="left" id="sg-public-gallery-row2"><div class="sg-gallery-placeholder">New travel moments are coming soon.</div></div>
+        </div>
+        <a class="sg-gallery-more" href="gallery.html">Explore the full gallery <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
     </section>
 
     <section id="contact" class="relative py-16 sm:py-28 bg-slate-950 text-white border-t border-white/10 overflow-hidden">
@@ -454,7 +580,7 @@
                             </div>
                             <h3 class="text-2xl font-extrabold text-white">Tailor-Made Itineraries in Minutes</h3>
                             <p class="text-slate-200 text-sm leading-relaxed">
-                                Share your travel dates, group size, and preferred sightseeing stops. We craft personalized quotes with verified hotel vouchers and dedicated private cabs.
+                                Share your travel dates, group size, and sightseeing preferences. We will check accommodation and transport availability and send a tailored quote with clear inclusions and terms.
                             </p>
                         </div>
                         <div class="grid grid-cols-2 gap-3 pt-4 border-t border-white/15">
@@ -476,23 +602,23 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <a href="tel:+919876543210" class="glass-subtile rounded-3xl p-5 sm:p-6 flex flex-col justify-between space-y-4 group">
+                        <a id="public-contact-phone-link" href="tel:+919876543210" class="glass-subtile rounded-3xl p-5 sm:p-6 flex flex-col justify-between space-y-4 group">
                             <div class="w-12 h-12 rounded-2xl bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-phone-volume text-xl"></i>
                             </div>
                             <div>
                                 <span class="text-[11px] text-slate-300 uppercase tracking-wider block font-semibold">Call / WhatsApp</span>
-                                <span class="font-black text-base text-white mt-0.5 block">+91 98765 43210</span>
+                                <span id="public-contact-phone" class="font-black text-base text-white mt-0.5 block">+91 98765 43210</span>
                             </div>
                         </a>
 
-                        <a href="mailto:sarkargetaways@gmail.com" class="glass-subtile rounded-3xl p-5 sm:p-6 flex flex-col justify-between space-y-4 group">
+                        <a id="public-contact-email-link" href="mailto:sarkargetaways@gmail.com" class="glass-subtile rounded-3xl p-5 sm:p-6 flex flex-col justify-between space-y-4 group">
                             <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-envelope-open-text text-xl"></i>
                             </div>
                             <div>
                                 <span class="text-[11px] text-slate-300 uppercase tracking-wider block font-semibold">Official Email</span>
-                                <span class="font-bold text-xs sm:text-sm text-white mt-0.5 block truncate">sarkargetaways@gmail.com</span>
+                                <span id="public-contact-email" class="font-bold text-xs sm:text-sm text-white mt-0.5 block truncate">sarkargetaways@gmail.com</span>
                             </div>
                         </a>
                     </div>
@@ -507,7 +633,7 @@
                                 <span class="text-[11px] text-slate-300">TripJack & Riya Connect Partner Network</span>
                             </div>
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-bold uppercase">Verified</span>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-bold uppercase">Quote request</span>
                     </div>
                 </div>
 
@@ -573,962 +699,69 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-slate-400 py-10 sm:py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 text-center sm:text-left text-xs sm:text-sm">
-            <div class="flex items-center justify-center">
-                 <img src="sarkargatewayslogo.png" alt="Sarkar Getaways" class="site-logo-footer cursor-pointer" ondblclick="openAdminLogin()" title="Double click for Admin Access">
+
+
+    <section id="sg-feedback" class="sg-feedback-photo-section">
+      <div class="sg-review-bg"></div><div class="sg-review-overlay"></div>
+      <div class="sg-review-content">
+        <div class="sg-section-heading"><span>TRAVELLER INSPIRATION</span><h2>Journeys Worth Remembering</h2><p>Illustrative travel stories showing the experiences we aim to create.</p></div>
+        <div class="sg-marquee sg-feedback-marquee">
+          <div class="sg-marquee-track sg-feedback-row" data-direction="left" id="sg-public-feedback-row1"><div class="sg-feedback-placeholder">Traveller stories will appear here.</div></div>
+          <div class="sg-marquee-track sg-feedback-row" data-direction="right" id="sg-public-feedback-row2"><div class="sg-feedback-placeholder">More guest experiences coming soon.</div></div>
+        </div>
+        <a class="sg-gallery-more sg-feedback-more" href="feedback.html">Read traveller feedback <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <footer class="sg-site-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="sg-footer-main">
+                <div class="sg-footer-brand">
+                    <div class="sg-footer-brand-row">
+                        <img src="sarkargatewayslogo.png" alt="Sarkar Getaways" class="site-logo-footer">
+                        <div class="sg-footer-partners" aria-label="Travel partner platforms">
+                            <span class="sg-footer-partners-label">B2B platforms</span>
+                            <div class="sg-footer-partner-logos">
+                                <span class="sg-footer-logo-chip"><img src="assets/riya-logo.png" alt="Riya Travel"></span>
+                                <span class="sg-footer-logo-chip"><img src="assets/tripjack-logo.png" alt="TripJack"></span>
+                                <span class="sg-footer-logo-chip"><img src="assets/makemytrip-logo.png" alt="MakeMyTrip"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="sg-footer-tagline">Thoughtful travel planning. Clear booking details. Journeys worth remembering.</p>
+                </div>
+                <div class="sg-footer-column">
+                    <h3>Explore</h3>
+                    <a href="#home">Home</a>
+                    <a href="#packages">Holiday packages</a>
+                    <a href="#destinations">Destinations</a>
+                    <a href="#steps">How it works</a>
+                </div>
+                <div class="sg-footer-column">
+                    <h3>Get in touch</h3>
+                    <a href="mailto:sarkar.getaways@gmail.com?subject=Travel%20Enquiry"><i class="fa-regular fa-envelope"></i>sarkar.getaways@gmail.com</a>
+                    <span><i class="fa-solid fa-location-dot"></i> Kolkata, West Bengal, India</span>
+                    <a href="#contact">Plan your trip <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
-            <p>
-                &copy; 2026 Sarkar Getaways. All rights reserved. 
-                <span class="cursor-pointer hover:text-brand-gold transition-colors font-medium" onclick="openAdminLogin()" title="Owner Control HQ (Shortcut: Ctrl+Shift+A)">Verified B2B Travel Partner.</span>
-                <button onclick="openAdminLogin()" class="secret-admin-trigger ml-2 inline-flex items-center text-slate-700 hover:text-brand-gold transition-colors text-[10px]" title="Secret Admin Gate (Ctrl+Shift+A)">
-                    <i class="fa-solid fa-lock text-[10px]"></i>
-                </button>
-            </p>
+            <div class="sg-footer-bottom">
+                <p>&copy; 2026 Sarkar Getaways. All rights reserved.</p>
+                <p>Travel planning and booking assistance. Supplier services are subject to availability and partner terms.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- =========================================================
-         HIDDEN ADMIN GATEWAY: AUTHENTICATION MODAL
-         ========================================================= -->
-    <div id="admin-login-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="closeAdminLogin()"></div>
-        <div class="admin-card relative z-10 w-full max-w-md rounded-3xl p-6 sm:p-8 text-white space-y-6 animate-text">
-            <div class="text-center space-y-2">
-                <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 mx-auto flex items-center justify-center text-brand-gold">
-                    <i class="fa-solid fa-shield-halved text-2xl"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold uppercase tracking-tight">Sarkar Operations HQ</h3>
-                <p class="text-xs text-slate-400">Restricted agency terminal. Enter master PIN to access live bookings, B2B desks, and itineraries.</p>
-                <div class="inline-block bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-[11px] font-bold px-3 py-1 rounded-full mt-1">
-                    <i class="fa-solid fa-key mr-1"></i> Default PIN: <span class="font-mono">sarkar2026</span>
-                </div>
-            </div>
+    <div class="sg-preview-footer-note" id="sg-preview-footer-note"><span class="sg-preview-status-dot"></span><strong>PARTNER PREVIEW</strong><span>Website presentation version · Some content and services are illustrative and under development.</span></div>
+    <button class="sg-preview-float" id="sg-preview-float" type="button" aria-label="Website development in progress"><span class="sg-preview-float-icon"><i class="fa-solid fa-triangle-exclamation"></i></span><span class="sg-preview-float-text"><b>Preview version</b><small>Development in progress</small></span></button>
 
-            <form onsubmit="submitAdminLogin(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Master Security PIN</label>
-                    <div class="relative">
-                        <input type="password" id="admin-pin-input" required placeholder="Enter PIN (e.g. sarkar2026)" class="admin-input text-center text-lg tracking-widest font-mono py-3 font-bold" autocomplete="current-password">
-                    </div>
-                    <div id="admin-login-error" class="hidden text-rose-400 text-xs font-semibold mt-2 text-center"></div>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-slate-400">
-                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-keyboard text-brand-gold text-[11px]"></i> Shortcut: Ctrl + Shift + A</span>
-                    <span>256-Bit Encrypted</span>
-                </div>
-
-                <div class="pt-2 flex items-center gap-3">
-                    <button type="button" onclick="closeAdminLogin()" class="admin-btn admin-btn-outline flex-1 py-3">Cancel</button>
-                    <button type="submit" class="admin-btn admin-btn-gold flex-1 py-3 font-black uppercase tracking-wider">
-                        <span>Unlock HQ</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- =========================================================
-         HIDDEN ADMIN PANEL: FULL OPERATIONAL HQ OVERLAY
-         ========================================================= -->
-    <div id="admin-panel-overlay">
-        <div class="admin-panel-container">
-            <!-- Topbar -->
-            <header class="admin-topbar">
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-3">
-                        <img src="sarkargatewayslogo.png" alt="Sarkar Getaways" style="height: 38px; width: auto;" onerror="this.style.display='none'">
-                        <div>
-                            <span class="font-display text-base font-bold text-white tracking-wide uppercase block">Sarkar Getaways</span>
-                            <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Master Operations HQ
-                            </span>
-                        </div>
-                    </div>
-                    <span class="hidden md:inline-block admin-badge-emerald"><i class="fa-solid fa-lock-open mr-1"></i> Owner Authorized</span>
-                </div>
-
-                <!-- Global Search & Direct Shortcuts -->
-                <div class="hidden lg:flex items-center space-x-3 flex-1 max-w-md mx-6">
-                    <div class="relative w-full">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="text" oninput="handleAdminGlobalSearch(this.value)" placeholder="Quick search travellers, bookings, packages, phone..." class="admin-input pl-9 text-xs py-2 w-full">
-                    </div>
-                </div>
-
-                <!-- Clock & Actions -->
-                <div class="flex items-center space-x-3">
-                    <div class="hidden sm:flex flex-col text-right">
-                        <span id="admin-live-clock" class="font-mono text-xs font-bold text-white">00:00:00 IST</span>
-                        <span id="admin-live-date" class="text-[10px] text-slate-400">Today</span>
-                    </div>
-
-                    <!-- Enquiries Bell Alert -->
-                    <button onclick="switchAdminTab('enquiries')" class="admin-icon-btn relative" title="Pending Enquiries">
-                        <i class="fa-solid fa-bell"></i>
-                        <span id="topbar-bell-badge" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-[9px] font-bold text-white flex items-center justify-center border border-slate-900" style="display: none;">0</span>
-                    </button>
-
-                    <button onclick="openNewBookingModal()" class="admin-btn admin-btn-gold text-xs py-2 px-3 whitespace-nowrap">
-                        <i class="fa-solid fa-plus mr-1"></i> New Booking
-                    </button>
-
-                    <!-- Profile Pill -->
-                    <div class="hidden xl:flex items-center gap-2.5 px-3 py-1 rounded-xl bg-white/5 border border-white/10">
-                        <div class="w-7 h-7 rounded-lg overflow-hidden bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-[11px] font-bold text-brand-gold">
-                            AS
-                        </div>
-                        <div class="leading-tight text-left">
-                            <span class="text-xs font-bold text-white block">Aniket Sarkar</span>
-                            <span class="text-[9px] text-brand-gold block font-semibold">Master Admin</span>
-                        </div>
-                    </div>
-
-                    <button onclick="document.getElementById('admin-help-modal').classList.add('active')" class="admin-icon-btn" title="Shortcuts & Help">
-                        <i class="fa-solid fa-circle-question"></i>
-                    </button>
-
-                    <button onclick="logoutAdmin()" class="admin-icon-btn danger" title="Lock & Logout">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </button>
-
-                    <button onclick="closeAdminPanel()" class="admin-icon-btn" title="Minimize / Close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Admin Body Layout -->
-            <div class="admin-body">
-                <!-- Sidebar -->
-                <aside class="admin-sidebar">
-                    <div class="space-y-1.5">
-                        <button id="nav-btn-dashboard" onclick="switchAdminTab('dashboard')" class="admin-nav-item active">
-                            <i class="fa-solid fa-chart-pie text-sm"></i>
-                            <span>Overview HQ</span>
-                        </button>
-                        <button id="nav-btn-planners" onclick="switchAdminTab('planners')" class="admin-nav-item">
-                            <i class="fa-solid fa-map-location-dot text-sm"></i>
-                            <span>Tour Planners</span>
-                        </button>
-                        <button id="nav-btn-calendar" onclick="switchAdminTab('calendar')" class="admin-nav-item">
-                            <i class="fa-solid fa-calendar-days text-sm"></i>
-                            <span>Booking Dates</span>
-                        </button>
-                        <button id="nav-btn-travellers" onclick="switchAdminTab('travellers')" class="admin-nav-item">
-                            <i class="fa-solid fa-users text-sm"></i>
-                            <span>Travellers & CRM</span>
-                        </button>
-                        <button id="nav-btn-guides" onclick="switchAdminTab('guides')" class="admin-nav-item">
-                            <i class="fa-solid fa-id-card-clip text-sm"></i>
-                            <span>Guides & Fleet</span>
-                        </button>
-                        <button id="nav-btn-enquiries" onclick="switchAdminTab('enquiries')" class="admin-nav-item relative">
-                            <i class="fa-solid fa-inbox text-sm"></i>
-                            <span>Enquiry Leads</span>
-                            <span id="nav-badge-enquiries" class="admin-nav-badge">0</span>
-                        </button>
-                        <button id="nav-btn-marketing" onclick="switchAdminTab('marketing')" class="admin-nav-item">
-                            <i class="fa-solid fa-bullhorn text-sm"></i>
-                            <span>Sales & Marketing</span>
-                        </button>
-                        <button id="nav-btn-b2b" onclick="switchAdminTab('b2b')" class="admin-nav-item">
-                            <i class="fa-solid fa-network-wired text-sm"></i>
-                            <span>B2B Portal Hub</span>
-                        </button>
-                    </div>
-
-                    <!-- Agency Status Card (Matching Mockup) -->
-                    <div class="my-3 p-3 rounded-2xl bg-slate-900/90 border border-white/10 flex items-center gap-3 shadow-md">
-                        <div class="w-9 h-9 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-sm font-bold flex-shrink-0">
-                            <i class="fa-solid fa-gem"></i>
-                        </div>
-                        <div class="min-w-0">
-                            <span class="text-xs font-bold text-white block truncate">Sarkar Agency HQ</span>
-                            <span class="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> B2B Verified Hub
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Sidebar Bottom -->
-                    <div class="pt-4 border-t border-white/10 space-y-3 text-xs">
-                        <div class="bg-slate-900/90 p-3 rounded-2xl border border-white/10 space-y-2 backdrop-blur-md shadow-lg">
-                            <div class="text-[10px] text-brand-gold uppercase font-black tracking-widest flex items-center justify-between">
-                                <span>Quick B2B Direct</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2 text-[11px]">
-                                <a href="https://b2b.riya.travel/" target="_blank" class="admin-quick-b2b-btn text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 border-rose-500/30">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400 mr-1.5"></span> Riya
-                                </a>
-                                <a href="https://tripjack.com" target="_blank" class="admin-quick-b2b-btn text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border-amber-500/30">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1.5"></span> Tripjack
-                                </a>
-                                <a href="https://partner.makemytrip.com" target="_blank" class="admin-quick-b2b-btn text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 border-blue-500/30">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 mr-1.5"></span> MMT
-                                </a>
-                                <a href="https://www.tboholidays.com" target="_blank" class="admin-quick-b2b-btn text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border-emerald-500/30">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span> TBO
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between gap-2 px-1">
-                            <button onclick="adminStore.exportJSON()" class="admin-sidebar-tool-btn hover:text-brand-gold hover:border-brand-gold/40">
-                                <i class="fa-solid fa-download text-xs text-brand-gold"></i>
-                                <span>Backup</span>
-                            </button>
-                            <button onclick="adminStore.resetDefaults()" class="admin-sidebar-tool-btn hover:text-rose-400 hover:border-rose-500/40">
-                                <i class="fa-solid fa-rotate-left text-xs text-rose-400"></i>
-                                <span>Reset</span>
-                            </button>
-                        </div>
-                    </div>
-                </aside>
-
-                <!-- Main Content Workspace -->
-                <main class="admin-main">
-                    <!-- ==============================================
-                    <!-- ==============================================
-                         TAB 1: OVERVIEW DASHBOARD (LUXURY TRAVELIE REDESIGN)
-                         ============================================== -->
-                    <div id="tab-content-dashboard" class="admin-tab-content active space-y-8 md:space-y-10">
-                        <!-- Top 3 Large KPI Cards (Matching Screen 2) -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                            <!-- KPI 1: Bookings -->
-                            <div class="admin-card rounded-2xl p-6 lg:p-7 relative overflow-hidden group hover:border-brand-gold/60 transition-all shadow-xl space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Bookings</span>
-                                    <div class="w-12 h-12 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-lg shadow-md">
-                                        <i class="fa-solid fa-calendar-check"></i>
-                                    </div>
-                                </div>
-                                <div class="flex items-baseline justify-between pt-1">
-                                    <h3 id="dash-kpi-booking" class="text-3xl lg:text-4xl font-black text-white">1,248</h3>
-                                    <span class="text-xs font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                                        <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +12.5%
-                                    </span>
-                                </div>
-                                <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-full rounded-full" style="width: 78%;"></div>
-                                </div>
-                                <p class="text-[11px] text-slate-400">Confirmed guest departures & holiday tours</p>
-                            </div>
-
-                            <!-- KPI 2: Customers -->
-                            <div class="admin-card rounded-2xl p-6 lg:p-7 relative overflow-hidden group hover:border-blue-500/60 transition-all shadow-xl space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Travelers / Guests</span>
-                                    <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 text-lg shadow-md">
-                                        <i class="fa-solid fa-users"></i>
-                                    </div>
-                                </div>
-                                <div class="flex items-baseline justify-between pt-1">
-                                    <h3 id="dash-kpi-customers" class="text-3xl lg:text-4xl font-black text-white">2,896</h3>
-                                    <span class="text-xs font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                                        <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +8.2%
-                                    </span>
-                                </div>
-                                <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full" style="width: 85%;"></div>
-                                </div>
-                                <p class="text-[11px] text-slate-400">Adults & kids traveling in holiday batches</p>
-                            </div>
-
-                            <!-- KPI 3: Earnings -->
-                            <div class="admin-card rounded-2xl p-6 lg:p-7 relative overflow-hidden group hover:border-emerald-500/60 transition-all shadow-xl space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Gross Tour Revenue</span>
-                                    <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg shadow-md">
-                                        <i class="fa-solid fa-indian-rupee-sign"></i>
-                                    </div>
-                                </div>
-                                <div class="flex items-baseline justify-between pt-1">
-                                    <h3 id="dash-kpi-earnings" class="text-3xl lg:text-4xl font-black text-brand-gold">₹3,94,800</h3>
-                                    <span class="text-xs font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                                        <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +24.1%
-                                    </span>
-                                </div>
-                                <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full" style="width: 92%;"></div>
-                                </div>
-                                <p class="text-[11px] text-slate-400">Real-time ledger + verified advances collected</p>
-                            </div>
-                        </div>
-
-                        <!-- 2-Column Dashboard Main Grid (Screen 2) -->
-                        <div class="admin-dash-layout">
-                            <!-- Left Column: Analytics, Packages & Bookings -->
-                            <div class="space-y-8 md:space-y-10">
-                                <!-- Revenue Overview Card with Spline Wave Chart -->
-                                <div class="admin-card rounded-2xl p-6 lg:p-7 space-y-5">
-                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
-                                        <div>
-                                            <h3 class="font-bold text-white text-base lg:text-lg flex items-center gap-2">
-                                                <i class="fa-solid fa-chart-line text-brand-gold"></i> Revenue Performance Curve
-                                            </h3>
-                                            <p class="text-xs text-slate-400 mt-0.5">Weekly and monthly gross earnings and trendline trajectory.</p>
-                                        </div>
-                                        <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-white/10 shadow-inner">
-                                            <button id="btn-rev-weekly" onclick="setRevenuePeriod('weekly')" class="admin-btn text-xs py-1.5 px-3 bg-brand-gold text-slate-950 font-bold">Weekly</button>
-                                            <button id="btn-rev-monthly" onclick="setRevenuePeriod('monthly')" class="admin-btn admin-btn-outline text-xs py-1.5 px-3 text-slate-300">Monthly</button>
-                                        </div>
-                                    </div>
-
-                                    <div id="revenue-chart-svg-container" class="w-full pt-2"></div>
-                                </div>
-
-                                <!-- Subgrid: Top Destinations (Donut) & Tour Fulfillment (Progress) -->
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                                    <!-- Top Destinations Donut Card -->
-                                    <div class="admin-card rounded-2xl p-6 space-y-4">
-                                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                            <div>
-                                                <h4 class="font-bold text-white text-sm lg:text-base">Top Destinations</h4>
-                                                <p class="text-[11px] text-slate-400 mt-0.5">Guest volume share across regional circuits</p>
-                                            </div>
-                                            <div class="w-8 h-8 rounded-lg bg-brand-gold/10 border border-brand-gold/25 flex items-center justify-center text-brand-gold text-xs">
-                                                <i class="fa-solid fa-chart-pie"></i>
-                                            </div>
-                                        </div>
-                                        <div id="destinations-donut-container" class="pt-2"></div>
-                                    </div>
-
-                                    <!-- Total Trips Multi-segment Progress Bar Card -->
-                                    <div class="admin-card rounded-2xl p-6 space-y-4">
-                                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                            <div>
-                                                <h4 class="font-bold text-white text-sm lg:text-base">Tour Fulfillment Rate</h4>
-                                                <p class="text-[11px] text-slate-400 mt-0.5">Completed vs active & pending balance</p>
-                                            </div>
-                                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 text-xs">
-                                                <i class="fa-solid fa-route"></i>
-                                            </div>
-                                        </div>
-                                        <div id="trips-distribution-bar" class="pt-2"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Packages Preview Row (Screen 2 Middle) -->
-                                <div class="space-y-4">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <h4 class="font-bold text-white text-base lg:text-lg">Curated Tour Packages</h4>
-                                            <p class="text-xs text-slate-400">Exclusive itineraries ready for instant client WhatsApp quotation.</p>
-                                        </div>
-                                        <button onclick="switchAdminTab('planners')" class="text-xs text-brand-gold hover:text-amber-300 font-bold flex items-center gap-1.5 group bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 transition-all">
-                                            <span>All Planners</span>
-                                            <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                                        </button>
-                                    </div>
-                                    <div id="dash-packages-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-                                </div>
-
-                                <!-- Recent Bookings Table (Screen 2 Bottom) -->
-                                <div class="admin-table-wrapper p-6 lg:p-7">
-                                    <div class="border-b border-white/10 pb-4 mb-4 flex items-center justify-between">
-                                        <div>
-                                            <h4 class="font-bold text-white text-base lg:text-lg">Recent Tour Departures & Guest Ledger</h4>
-                                            <p class="text-xs text-slate-400 mt-0.5">Live booking status with 1-click A4 Printable Voucher & Tax Bill.</p>
-                                        </div>
-                                        <button onclick="switchAdminTab('travellers')" class="text-xs text-brand-gold hover:text-amber-300 font-bold flex items-center gap-1.5 group bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 transition-all">
-                                            <span>Full CRM</span>
-                                            <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                                        </button>
-                                    </div>
-                                    <div class="overflow-x-auto">
-                                        <table class="admin-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Traveller & Phone</th>
-                                                    <th>Destination</th>
-                                                    <th>Departure</th>
-                                                    <th>Total Fare</th>
-                                                    <th>Status</th>
-                                                    <th class="text-right">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="dash-recent-bookings"></tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: Mini Calendar, Upcoming Departures, Messages & Activities -->
-                            <div class="space-y-8 md:space-y-10">
-                                <!-- Mini Calendar Widget (Screen 2 Right Top) -->
-                                <div class="admin-card rounded-2xl p-6 space-y-4">
-                                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                        <span id="dash-mini-cal-month" class="text-xs font-bold text-brand-gold uppercase tracking-wider font-mono">October 2026</span>
-                                        <div class="flex items-center gap-1">
-                                            <button onclick="changeCalendarMonth(-1)" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 flex items-center justify-center text-xs transition-colors">
-                                                <i class="fa-solid fa-chevron-left text-[10px]"></i>
-                                            </button>
-                                            <button onclick="resetCalendarToToday()" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 text-[10px] font-bold transition-colors">
-                                                Today
-                                            </button>
-                                            <button onclick="changeCalendarMonth(1)" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 flex items-center justify-center text-xs transition-colors">
-                                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-7 gap-1.5 text-center text-[10px] font-black text-amber-400 uppercase tracking-widest pb-1">
-                                        <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
-                                    </div>
-                                    <div id="dash-mini-cal-grid" class="grid grid-cols-7 gap-1.5"></div>
-                                </div>
-
-                                <!-- Upcoming Trips Widget (Screen 2 Right) -->
-                                <div class="admin-card rounded-2xl p-6 space-y-4">
-                                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                        <div>
-                                            <h4 class="font-bold text-white text-xs uppercase tracking-wider">Upcoming Departures</h4>
-                                            <span class="text-[10px] text-slate-400">Next confirmed holiday batches</span>
-                                        </div>
-                                        <button onclick="switchAdminTab('calendar')" class="text-[11px] text-brand-gold hover:underline font-semibold">Full Calendar &rarr;</button>
-                                    </div>
-                                    <div id="dash-upcoming-trips-list" class="space-y-3"></div>
-                                </div>
-
-                                <!-- Live Messages & Enquiries Desk (Screen 2 Right) -->
-                                <div class="admin-card rounded-2xl p-6 space-y-4">
-                                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                        <div>
-                                            <h4 class="font-bold text-white text-xs uppercase tracking-wider">Live Leads & Messages</h4>
-                                            <span class="text-[10px] text-slate-400">Website quotation requests</span>
-                                        </div>
-                                        <button onclick="switchAdminTab('enquiries')" class="text-[11px] text-brand-gold hover:underline font-semibold">Inbox &rarr;</button>
-                                    </div>
-                                    <div id="dash-messages-desk-list" class="space-y-3"></div>
-                                </div>
-
-                                <!-- Live Operations Activity Feed (Screen 2 Right Bottom) -->
-                                <div class="admin-card rounded-2xl p-6 space-y-4">
-                                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                                        <h4 class="font-bold text-white text-xs uppercase tracking-wider flex items-center gap-1.5">
-                                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Operations Activity
-                                        </h4>
-                                        <span class="text-[10px] text-slate-500 font-mono">Real-time</span>
-                                    </div>
-                                    <div id="dash-recent-activity-feed" class="space-y-3 pt-1"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 2: TOUR & TRAVEL PLANNERS (DUAL SHOWCASE & ITINERARY)
-                         ============================================== -->
-                    <div id="tab-content-planners" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div>
-                                <h2 class="text-2xl font-black text-white">Tour & Travel Planners</h2>
-                                <p class="text-xs text-slate-400">Curate multi-day packages, calculate B2B net costs vs selling markup, and copy client-ready WhatsApp itineraries.</p>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-3">
-                                <div class="p-1 rounded-xl bg-slate-900 border border-white/10 flex items-center gap-1">
-                                    <button id="btn-pkg-view-showcase" onclick="setPackageViewMode('showcase')" class="admin-btn text-xs py-1.5 px-3 bg-brand-gold text-slate-950 font-bold">
-                                        <i class="fa-solid fa-table-cells-large mr-1"></i> Showcase
-                                    </button>
-                                    <button id="btn-pkg-view-itin" onclick="setPackageViewMode('itinerary')" class="admin-btn admin-btn-outline text-xs py-1.5 px-3 text-slate-300">
-                                        <i class="fa-solid fa-list-check mr-1"></i> Day Schedule
-                                    </button>
-                                </div>
-                                <button onclick="promptNewPackage()" class="admin-btn admin-btn-gold text-xs py-2 px-3.5 shadow-md">
-                                    <i class="fa-solid fa-plus mr-1"></i> New Package
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Rendered dynamically by admin.js (Showcase Catalog vs Itinerary Builder) -->
-                        <div id="planners-view-container"></div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 3: BOOKING DATES & CALENDAR
-                         ============================================== -->
-                    <div id="tab-content-calendar" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div>
-                                <h2 class="text-2xl font-black text-white">Booking Dates & Availability Calendar</h2>
-                                <p class="text-xs text-slate-400">Track departure dates, guest schedules, active cab allocations, and hotel check-in/outs.</p>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button onclick="changeCalendarMonth(-1)" class="admin-cal-nav-btn" title="Previous Month">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button onclick="resetCalendarToToday()" class="admin-btn admin-btn-outline text-xs py-2 px-3">Today</button>
-                                <button onclick="changeCalendarMonth(1)" class="admin-cal-nav-btn" title="Next Month">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                                <span id="calendar-month-title" class="font-display text-lg font-bold text-brand-gold ml-2 uppercase">October 2026</span>
-                            </div>
-                        </div>
-
-                        <!-- Monthly Calendar Stats Summary Bar -->
-                        <div id="calendar-stats-bar" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex items-center justify-between shadow-lg">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Total Departures This Month</span>
-                                    <strong id="cal-stat-departures" class="text-xl font-black text-white mt-0.5 block">4 Trips</strong>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base">
-                                    <i class="fa-solid fa-plane-departure"></i>
-                                </div>
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex items-center justify-between shadow-lg">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Confirmed Guests Travelling</span>
-                                    <strong id="cal-stat-guests" class="text-xl font-black text-emerald-400 mt-0.5 block">11 Guests</strong>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-base">
-                                    <i class="fa-solid fa-users"></i>
-                                </div>
-                            </div>
-                            <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex items-center justify-between shadow-lg">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Dedicated Cabs Dispatched</span>
-                                    <strong id="cal-stat-cabs" class="text-xl font-black text-blue-400 mt-0.5 block">4 Private Cabs</strong>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 text-base">
-                                    <i class="fa-solid fa-car"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Legend & Help Bar -->
-                        <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300 bg-slate-900/70 p-4 px-6 rounded-2xl border border-white/10 shadow-lg">
-                            <div class="flex items-center gap-5">
-                                <span class="text-slate-400 font-bold uppercase text-[10px] tracking-wider">Status Legend:</span>
-                                <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"></span> Confirmed Trip</span>
-                                <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400/50"></span> Trip In-Progress</span>
-                                <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-400 shadow-sm shadow-blue-400/50"></span> Pending Balance</span>
-                            </div>
-                            <button onclick="openNewBookingModal()" class="admin-btn admin-btn-gold text-xs py-1.5 px-3">
-                                <i class="fa-solid fa-plus mr-1"></i> Add Trip on Date
-                            </button>
-                        </div>
-
-                        <!-- Calendar Grid Wrapper -->
-                        <div class="admin-card rounded-2xl p-6 sm:p-7 space-y-4">
-                            <div class="admin-calendar-weekdays">
-                                <div class="admin-calendar-day-header">Sun</div>
-                                <div class="admin-calendar-day-header">Mon</div>
-                                <div class="admin-calendar-day-header">Tue</div>
-                                <div class="admin-calendar-day-header">Wed</div>
-                                <div class="admin-calendar-day-header">Thu</div>
-                                <div class="admin-calendar-day-header">Fri</div>
-                                <div class="admin-calendar-day-header">Sat</div>
-                            </div>
-                            <div id="calendar-grid-cells" class="admin-calendar-grid"></div>
-                        </div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 4: TRAVELLERS CRM & CUSTOMIZATION
-                         ============================================== -->
-                    <div id="tab-content-travellers" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div>
-                                <h2 class="text-2xl font-black text-white">Travellers Details & Trip Customization (CRM)</h2>
-                                <p class="text-xs text-slate-400">Manage guest records, customize sightseeing and cabs, assign drivers, and generate instant printable official vouchers.</p>
-                            </div>
-                            <button onclick="openNewBookingModal()" class="admin-btn admin-btn-gold text-xs py-2.5 px-4 shadow-md">
-                                <i class="fa-solid fa-user-plus mr-1"></i> Add New Traveller Booking
-                            </button>
-                        </div>
-
-                        <!-- Search & Filter Bar -->
-                        <div class="flex items-center gap-3">
-                            <div class="relative flex-1">
-                                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                                <input type="text" id="traveller-search-input" oninput="filterTravellers()" placeholder="Search by traveller name, phone number, destination or booking ID..." class="admin-input pl-9 text-xs py-3 w-full">
-                            </div>
-                        </div>
-
-                        <!-- Travellers Table -->
-                        <div class="admin-table-wrapper p-6 lg:p-7">
-                            <div class="overflow-x-auto">
-                                <table class="admin-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Traveller & Contact</th>
-                                            <th>Destination & Dates</th>
-                                            <th>Hotel & Cab Assigned</th>
-                                            <th>Billing & Balance</th>
-                                            <th>Status</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="travellers-table-body"></tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB: GUIDES & FLEET CRM (SCREEN 5)
-                         ============================================== -->
-                    <div id="tab-content-guides" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div id="guides-view-container"></div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 5: TOUR ENQUIRY LEADS INBOX (SCREEN 6)
-                         ============================================== -->
-                    <div id="tab-content-enquiries" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div id="enquiries-view-container"></div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 6: SALES & MARKETING PANEL (SCREEN 7)
-                         ============================================== -->
-                    <div id="tab-content-marketing" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div id="marketing-view-container"></div>
-                    </div>
-
-                    <!-- ==============================================
-                         TAB 7: B2B PORTAL DIRECT INTEGRATION HUB
-                         ============================================== -->
-                    <div id="tab-content-b2b" class="admin-tab-content space-y-8 md:space-y-10">
-                        <div>
-                            <h2 class="text-2xl font-black text-white">B2B Travel Portals Integration Hub</h2>
-                            <p class="text-xs text-slate-400">Direct 1-click launchers for your verified B2B agent consoles, stored portal credentials, and live fare markup calculator.</p>
-                        </div>
-
-                        <!-- Direct Launchers Grid -->
-                        <div id="b2b-portal-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"></div>
-
-                        <!-- B2B Net Fare & Markup Calculator -->
-                        <div class="admin-card rounded-2xl p-6 space-y-5">
-                            <div class="border-b border-white/10 pb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                                <div>
-                                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                                        <i class="fa-solid fa-calculator text-brand-gold"></i> Live B2B Net Fare & Profit Markup Calculator
-                                    </h3>
-                                    <p class="text-xs text-slate-400">Combine agent net rates from Riya Connect, Tripjack or MMT, calculate margin, and generate a client quote sheet.</p>
-                                </div>
-                                <span class="admin-badge-emerald">Agency Tool</span>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">B2B Airfare / Train (₹)</label>
-                                    <input type="number" id="calc-net-flight" value="4500" oninput="calculateB2BFare()" class="admin-input text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">B2B Hotel Net Rate (₹)</label>
-                                    <input type="number" id="calc-net-hotel" value="5800" oninput="calculateB2BFare()" class="admin-input text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Cab & Driver Net (₹)</label>
-                                    <input type="number" id="calc-net-cab" value="3200" oninput="calculateB2BFare()" class="admin-input text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Markup Type</label>
-                                    <select id="calc-markup-type" onchange="calculateB2BFare()" class="admin-input text-sm">
-                                        <option value="percent">Percentage (% Margin)</option>
-                                        <option value="flat">Flat Amount (₹)</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Markup Value (% or ₹)</label>
-                                    <input type="number" id="calc-markup-val" value="20" oninput="calculateB2BFare()" class="admin-input text-sm">
-                                </div>
-                                <div class="flex items-center pt-6">
-                                    <label class="flex items-center gap-2 cursor-pointer text-xs font-bold text-slate-200">
-                                        <input type="checkbox" id="calc-include-gst" checked onchange="calculateB2BFare()" class="w-4 h-4 rounded text-brand-gold">
-                                        <span>Add 5% Tour Package GST</span>
-                                    </label>
-                                </div>
-                                <div class="sm:col-span-2 flex items-center justify-end gap-2 pt-4">
-                                    <button id="btn-calc-fare" onclick="calculateB2BFare()" class="admin-btn admin-btn-outline text-xs py-2 px-3">
-                                        <i class="fa-solid fa-rotate mr-1"></i> Recalculate
-                                    </button>
-                                    <button onclick="copyB2BQuoteSheet()" class="admin-btn admin-btn-gold text-xs py-2 px-4">
-                                        <i class="fa-brands fa-whatsapp mr-1"></i> Copy Client Cost Sheet
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Calculation Result Bar -->
-                            <div class="p-4 rounded-xl bg-slate-900 border border-brand-gold/30 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-semibold">Total B2B Net Cost</span>
-                                    <strong id="calc-res-net" class="text-base text-slate-200">₹0</strong>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-semibold">Agency Profit Margin</span>
-                                    <strong id="calc-res-markup" class="text-base text-brand-gold">₹0</strong>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-semibold">Applicable GST (5%)</span>
-                                    <strong id="calc-res-gst" class="text-base text-slate-300">₹0</strong>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] text-slate-400 uppercase block font-semibold">Final Selling Price</span>
-                                    <strong id="calc-res-final" class="text-xl font-black text-emerald-400">₹0</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </div>
-    </div>
-
-    <!-- =========================================================
-         MODAL 1: TRAVELLER & TRIP CUSTOMIZATION (ADD/EDIT)
-         ========================================================= -->
-    <div id="admin-booking-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="closeBookingModal()"></div>
-        <div class="admin-card admin-modal-box text-white space-y-6">
-            <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <div>
-                    <h3 id="bk-modal-title" class="text-xl font-bold text-white">Customize Tour Booking</h3>
-                    <p class="text-xs text-slate-400">Update traveller preferences, hotel category, private cab, and en-route sightseeing.</p>
-                </div>
-                <button onclick="closeBookingModal()" class="admin-icon-btn" title="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <form onsubmit="saveBookingForm(event)" class="space-y-4">
-                <input type="hidden" id="bk-id">
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Lead Traveller Name</label>
-                        <input type="text" id="bk-client-name" required placeholder="e.g. Vikram Sengupta" class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone / WhatsApp</label>
-                        <input type="text" id="bk-client-phone" required placeholder="+91 98301 23456" class="admin-input">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Email Address</label>
-                        <input type="email" id="bk-client-email" placeholder="client@email.com" class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">City / Origin</label>
-                        <input type="text" id="bk-client-city" placeholder="Kolkata" class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Booking Status</label>
-                        <select id="bk-status" class="admin-input">
-                            <option value="Confirmed">Confirmed</option>
-                            <option value="In-Progress">In-Progress</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Completed">Completed</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="sm:col-span-1">
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Destination Package</label>
-                        <select id="bk-destination" class="admin-input">
-                            <option value="Darjeeling Hills & Tea Estates">Darjeeling Hills & Tea Estates</option>
-                            <option value="Gangtok & En-Route Sightseeing">Gangtok & En-Route Sightseeing</option>
-                            <option value="Mandarmani Beach Getaway">Mandarmani Beach Getaway</option>
-                            <option value="Puri Sea Retreat & Konark">Puri Sea Retreat & Konark</option>
-                            <option value="Sundarbans Safari">Sundarbans Safari</option>
-                            <option value="Kerala Backwaters">Kerala Backwaters</option>
-                            <option value="Varanasi Heritage">Varanasi Heritage</option>
-                            <option value="Custom Tour Package">Custom Tour Package</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Departure Date</label>
-                        <input type="date" id="bk-departure-date" required class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Return Date</label>
-                        <input type="date" id="bk-return-date" required class="admin-input">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Adults</label>
-                        <input type="number" id="bk-adults" min="1" value="2" class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Kids</label>
-                        <input type="number" id="bk-kids" min="0" value="0" class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Total Bill (₹)</label>
-                        <input type="number" id="bk-total-amount" required class="admin-input">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Advance (₹)</label>
-                        <input type="number" id="bk-advance-paid" required class="admin-input">
-                    </div>
-                </div>
-
-                <!-- Custom Hotel & Cab Customization -->
-                <div class="p-4 rounded-xl bg-slate-900 border border-white/10 space-y-4">
-                    <span class="text-xs font-bold text-brand-gold uppercase tracking-wider block">Customization & Service Allocation</span>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Hotel Name & Star</label>
-                            <input type="text" id="bk-hotel-name" placeholder="e.g. Summit Hermon Hotel & Spa" class="admin-input">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Room Category & Meals</label>
-                            <input type="text" id="bk-room-cat" placeholder="e.g. Deluxe Valley View (CP)" class="admin-input">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Vehicle / Cab</label>
-                            <input type="text" id="bk-cab-type" placeholder="Exclusive Innova Crysta" class="admin-input">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Driver Name</label>
-                            <input type="text" id="bk-driver-name" placeholder="Tenzing Sherpa" class="admin-input">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Driver Phone</label>
-                            <input type="text" id="bk-driver-phone" placeholder="+91 94340 78219" class="admin-input">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Custom Sightseeing / Special En-Route Stops</label>
-                        <textarea id="bk-custom-notes" rows="2" placeholder="e.g. Stop at Mirik Lake en route, Batasia Loop toy train tickets, honeymoon cake..." class="admin-input text-xs"></textarea>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">B2B Source Portal</label>
-                            <select id="bk-b2b-portal" class="admin-input">
-                                <option value="Tripjack">Tripjack</option>
-                                <option value="Riya Connect">Riya Connect</option>
-                                <option value="MakeMyTrip Partner">MakeMyTrip Partner</option>
-                                <option value="TBO Holidays">TBO Holidays</option>
-                                <option value="Direct Supplier">Direct Local Supplier</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">B2B Reference / Voucher PNR</label>
-                            <input type="text" id="bk-b2b-ref" placeholder="TJ-HTL-998241" class="admin-input">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-end gap-3 pt-3 border-t border-white/10">
-                    <button type="button" onclick="closeBookingModal()" class="admin-btn admin-btn-outline py-2.5 px-5">Cancel</button>
-                    <button type="submit" class="admin-btn admin-btn-gold py-2.5 px-6 font-black uppercase tracking-wider">
-                        <i class="fa-solid fa-floppy-disk mr-1"></i> Save Booking
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- =========================================================
-         MODAL 2: PRINTABLE OFFICIAL TRAVEL VOUCHER & TAX BILL
-         ========================================================= -->
-    <div id="admin-voucher-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="closeVoucherModal()"></div>
-        <div id="admin-voucher-container" class="relative z-10 w-full max-w-5xl flex justify-center"></div>
-    </div>
-
-    <!-- =========================================================
-         MODAL 3: ITINERARY PLANNER DETAIL
-         ========================================================= -->
-    <div id="admin-itinerary-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="closePackageDetailModal()"></div>
-        <div class="admin-card admin-modal-box text-white space-y-5">
-            <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <h3 id="itin-modal-title" class="text-xl font-bold text-white">Tour Itinerary Details</h3>
-                <button onclick="closePackageDetailModal()" class="admin-icon-btn" title="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div id="itin-modal-content"></div>
-            <div class="flex justify-end pt-3 border-t border-white/10">
-                <button onclick="closePackageDetailModal()" class="admin-btn admin-btn-outline py-2 px-4 text-xs">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- =========================================================
-         MODAL 4: CALENDAR DAY DETAILS POP-UP
-         ========================================================= -->
-    <div id="admin-day-details-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="closeDayDetailsModal()"></div>
-        <div class="admin-card admin-modal-box text-white space-y-4">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                <h3 id="day-details-date-title" class="text-lg font-bold text-white">Departures & Schedule</h3>
-                <button onclick="closeDayDetailsModal()" class="admin-icon-btn" title="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div id="day-details-content" class="space-y-3 max-h-96 overflow-y-auto"></div>
-            <div class="flex justify-end pt-2 border-t border-white/10">
-                <button onclick="closeDayDetailsModal()" class="admin-btn admin-btn-outline py-1.5 px-4 text-xs">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- =========================================================
-         MODAL 5: ADMIN HELP & SHORTCUTS GUIDE
-         ========================================================= -->
-    <div id="admin-help-modal" class="items-center justify-center p-4">
-        <div class="admin-backdrop" onclick="document.getElementById('admin-help-modal').classList.remove('active')"></div>
-        <div class="admin-card admin-modal-box text-white space-y-5">
-            <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-circle-info text-brand-gold"></i> Sarkar Getaways HQ User Guide
-                </h3>
-                <button onclick="document.getElementById('admin-help-modal').classList.remove('active')" class="admin-icon-btn" title="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
-                <div class="p-3.5 rounded-xl bg-slate-900 border border-white/10 space-y-1.5">
-                    <strong class="text-white text-sm block text-brand-gold">Secret Access Shortcuts:</strong>
-                    <div>• <strong>Ctrl + Shift + A</strong> (or Alt + Shift + A): Instantly toggles the Admin Security Login from anywhere on the website.</div>
-                    <div>• <strong>Triple Click Logo:</strong> Triple-clicking the header logo opens the security gate.</div>
-                    <div>• <strong>Footer Lock:</strong> Clicking the subtle lock or "Verified B2B Partner" in the footer opens the gate.</div>
-                    <div>• <strong>URL Hash:</strong> Append <code class="bg-black/60 px-1 py-0.5 rounded text-amber-300">#admin</code> to the URL in your browser.</div>
-                    <div>• <strong>Default PIN:</strong> <code class="bg-black/60 px-1.5 py-0.5 rounded text-brand-gold font-bold">sarkar2026</code> or <code class="bg-black/60 px-1.5 py-0.5 rounded text-brand-gold font-bold">1234</code>.</div>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-slate-900 border border-white/10 space-y-1.5">
-                    <strong class="text-white text-sm block text-emerald-400">Direct B2B Integration:</strong>
-                    <div>• Direct quick links with Agent ID vaults for <strong>Riya Connect</strong>, <strong>Tripjack</strong>, <strong>MakeMyTrip Partner</strong>, <strong>TBO Holidays</strong> and <strong>EaseMyTrip</strong>.</div>
-                    <div>• Built-in B2B Net Fare + Profit Margin calculator with 1-click WhatsApp copy.</div>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-slate-900 border border-white/10 space-y-1.5">
-                    <strong class="text-white text-sm block text-amber-400">Website Form Sync:</strong>
-                    <div>• Any inquiry submitted by a visitor on the front-end form automatically lands in the <strong>Enquiry Leads Inbox</strong>.</div>
-                    <div>• Click "Book" on any lead to instantly convert it into a confirmed booking!</div>
-                </div>
-            </div>
-
-            <div class="flex justify-end pt-3 border-t border-white/10">
-                <button onclick="document.getElementById('admin-help-modal').classList.remove('active')" class="admin-btn admin-btn-gold py-2 px-5 text-xs font-bold">
-                    Got it!
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Client preview: administrative tools and private operations are intentionally excluded. -->
 
     <!-- Scripts -->
-    <script src="admin.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=beta-v1-1-packages"></script>
+    <script src="public-packages.js?v=beta-v1-1-packages"></script>
+    <script src="sg-demo-content.js?v=1.0"></script>
+<script>
+(()=>{const badge=document.getElementById('sg-preview-float');const footer=document.querySelector('.sg-site-footer');if(!badge||!footer)return;const observer=new IntersectionObserver(entries=>{badge.classList.toggle('is-hidden',entries.some(entry=>entry.isIntersecting));},{threshold:0.04});observer.observe(footer);})();
+</script>
 </body>
 </html>
